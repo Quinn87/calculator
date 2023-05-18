@@ -28,7 +28,6 @@
 
 .numButtons {
     display: flex;
-
     flex-wrap: wrap;
     width: 250px;
 }
