@@ -13,5 +13,3 @@ function multiply (numOne, numTwo){
 function divide (numOne, numTwo){
     return numOne / numTwo;
 }
-
-const numButtons = document.querySelectorAll('.numButton')
