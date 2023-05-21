@@ -31,5 +31,8 @@ numButtons.forEach(button => button.addEventListener('click', function (e) {
     }
     else {
         numTwo += e.target.textContent;
+        screenText.innerText = numTwo;
     }
 }));
+
+//When operator is selected clear screenText.innerText
