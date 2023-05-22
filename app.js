@@ -17,6 +17,7 @@ function division(numOne, numTwo) {
 let numOne = "";
 let numTwo = "";
 let operator = "";
+let answer = "";
 
 const numButtons = document.querySelectorAll('.numButton');
 const operatorButtons = document.querySelectorAll('.operatorButton');
@@ -50,18 +51,28 @@ equalsButton.addEventListener('click', function () {
     screenCalculation.innerText = `${numOne} ${operator} ${numTwo} =`;
     switch (operator) {
         case plus.innerText:
-            let answer = add(numOne, numTwo);
+            answer = add(numOne, numTwo);
             screenText.innerText = answer;
             numOne = answer;
+            numTwo = "";
             break;
         case minus.innerText:
-            screenText.innerText = subtract(numOne, numTwo);
+            answer = subtract(numOne, numTwo);
+            screenText.innerText = answer;
+            numOne = answer;
+            numTwo = "";
             break;
         case times.innerText:
-            screenText.innerText = multiply(numOne, numTwo);
+            answer = multiply(numOne, numTwo);
+            screenText.innerText = answer;
+            numOne = answer;
+            numTwo = "";
             break;
         case divide.innerText:
-            screenText.innerText = division(numOne, numTwo);
+            answer = division(numOne, numTwo);
+            screenText.innerText = answer;
+            numOne = answer;
+            numTwo = "";
             break;
     }
 
