@@ -1,18 +1,17 @@
-function add(numOne, numTwo, screenText) {
-    let answer = numOne + numTwo;
-    return answer;
+function add(numOne, numTwo) {
+    return parseInt(numOne) + parseInt(numTwo);
 }
 
 function subtract(numOne, numTwo) {
-    return numOne - numTwo;
+    return parseInt(numOne) - parseInt(numTwo);
 }
 
 function multiply(numOne, numTwo) {
-    return numOne * numTwo;
+    return parseInt(numOne) * parseInt(numTwo);
 }
 
-function divide(numOne, numTwo) {
-    return numOne / numTwo;
+function division(numOne, numTwo) {
+    return parseInt(numOne) / parseInt(numTwo);
 }
 
 let numOne = "";
@@ -24,6 +23,10 @@ const operatorButtons = document.querySelectorAll('.operatorButton');
 const equalsButton = document.querySelector('.equals');
 const screenCalculation = document.querySelector('.screenCalculation');
 const screenText = document.querySelector('.screenText');
+const plus = document.querySelector('#add')
+const minus = document.querySelector('#subtract')
+const times = document.querySelector('#multiply')
+const divide = document.querySelector('#divide')
 
 numButtons.forEach(button => button.addEventListener('click', function (e) {
     console.log(e.target.textContent);
@@ -42,12 +45,21 @@ operatorButtons.forEach(button => button.addEventListener('click', function (e) 
     screenCalculation.innerText = `${numOne} ${operator}`;
 }));
 
-equalsButton.addEventListener('click', function (numOne, numTwo) {
+equalsButton.addEventListener('click', function () {
     screenCalculation.innerText = `${numOne} ${operator} ${numTwo} =`;
     switch (operator) {
-        case '+':
-            add(numOne,numTwo,screenText);
+        case plus.innerText:
+            screenText.innerText = add(numOne, numTwo);
+            break;
+        case minus.innerText:
+            screenText.innerText = subtract(numOne, numTwo);
+            break;
+        case times.innerText:
+            screenText.innerText = multiply(numOne, numTwo);
+            break;
+        case divide.innerText:
+            screenText.innerText = division(numOne, numTwo);
             break;
     }
-    
+
 });
