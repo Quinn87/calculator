@@ -21,6 +21,7 @@ let operator = "";
 const numButtons = document.querySelectorAll('.numButton');
 const operatorButtons = document.querySelectorAll('.operatorButton');
 const equalsButton = document.querySelector('.equals');
+const clearButton = document.querySelector('#clear');
 const screenCalculation = document.querySelector('.screenCalculation');
 const screenText = document.querySelector('.screenText');
 const plus = document.querySelector('#add')
@@ -49,7 +50,9 @@ equalsButton.addEventListener('click', function () {
     screenCalculation.innerText = `${numOne} ${operator} ${numTwo} =`;
     switch (operator) {
         case plus.innerText:
-            screenText.innerText = add(numOne, numTwo);
+            let answer = add(numOne, numTwo);
+            screenText.innerText = answer;
+            numOne = answer;
             break;
         case minus.innerText:
             screenText.innerText = subtract(numOne, numTwo);
@@ -62,4 +65,12 @@ equalsButton.addEventListener('click', function () {
             break;
     }
 
+});
+
+clearButton.addEventListener('click', function (){
+    screenText.innerText = "";
+    numOne = "";
+    numTwo = "";
+    operator = "";
+    screenCalculation.innerText = "";
 });
