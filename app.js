@@ -35,4 +35,8 @@ numButtons.forEach(button => button.addEventListener('click', function (e) {
     }
 }));
 
-//When operator is selected clear screenText.innerText
+operatorButtons.forEach(button => button.addEventListener('click', function (e) {
+    console.log(e.target.textContent);
+    operator = e.target.textContent;
+    screenCalculation.innerText = `${numOne} ${operator}`;
+}));
