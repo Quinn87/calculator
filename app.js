@@ -24,6 +24,7 @@ const screenText = document.querySelector('.screenText');
 
 numButtons.forEach(button => button.addEventListener('click', function (e) {
     console.log(e.target.textContent);
-    screenText.innerText = e.target.textContent;
-    return numOne += e.target.textContent;
+    numOne += e.target.textContent;
+    screenText.innerText = `${numOne}`;
+    return numOne 
 }));
