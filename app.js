@@ -49,6 +49,19 @@ operatorButtons.forEach(button => button.addEventListener('click', function (e) 
 
 equalsButton.addEventListener('click', function () {
     screenCalculation.innerText = `${numOne} ${operator} ${numTwo} =`;
+    calculate(numOne,numTwo,operator);
+});
+
+clearButton.addEventListener('click', function (){
+    screenText.innerText = "";
+    numOne = "";
+    numTwo = "";
+    operator = "";
+    answer = "";
+    screenCalculation.innerText = "";
+});
+
+function calculate (numOne,numTwo,operator){
     switch (operator) {
         case plus.innerText:
             answer = add(numOne, numTwo);
@@ -76,12 +89,4 @@ equalsButton.addEventListener('click', function () {
             break;
     }
 
-});
-
-clearButton.addEventListener('click', function (){
-    screenText.innerText = "";
-    numOne = "";
-    numTwo = "";
-    operator = "";
-    screenCalculation.innerText = "";
-});
+}
